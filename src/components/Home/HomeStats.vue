@@ -92,7 +92,7 @@ export default {
   setup() {
     const stats = ref("");
     const get = async function () {
-      let response = await fetch("http://localhost:8080/api/stats");
+      let response = await fetch("http://gamingformiau.de:8080/api/stats");
       let data = await response.json();
       stats.value = data;
     };
