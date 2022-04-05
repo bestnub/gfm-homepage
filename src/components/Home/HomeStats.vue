@@ -1,12 +1,16 @@
 <template>
-  <div class="surface-ground px-4 py-5 md:px-6 lg:px-8">
+  <div v-if="stats" class="surface-ground px-4 py-5 md:px-6 lg:px-8">
     <div class="grid">
-      <div class="col-12 md:col-6 lg:col-3">
+      <div class="col-12 md:col-6 lg:col-4">
         <div class="surface-card shadow-2 p-3 border-round">
           <div class="flex justify-content-between mb-3">
             <div>
-              <span class="block text-500 font-medium mb-3">GFM Nutzer</span>
-              <div class="text-900 font-medium text-xl">10</div>
+              <span class="block text-500 font-medium mb-3"
+                >TeamSpeak Nutzer</span
+              >
+              <div class="text-900 font-medium text-xl">
+                {{ stats.tsUserCount }}
+              </div>
             </div>
             <div
               class="
@@ -21,11 +25,13 @@
               <i class="pi pi-shopping-cart text-blue-500 text-xl"></i>
             </div>
           </div>
-          <span class="text-green-500 font-medium">24 new </span>
-          <span class="text-500">in last month</span>
+          <span class="text-green-500 font-medium">
+            {{ stats.tsUserLastMonth }} neu
+          </span>
+          <span class="text-500">im letzten Monat</span>
         </div>
       </div>
-      <div class="col-12 md:col-6 lg:col-3">
+      <div class="col-12 md:col-6 lg:col-4">
         <div class="surface-card shadow-2 p-3 border-round">
           <div class="flex justify-content-between mb-3">
             <div>
@@ -45,16 +51,17 @@
               <i class="pi pi-map-marker text-orange-500 text-xl"></i>
             </div>
           </div>
-          <span class="text-green-500 font-medium">%52+ </span>
-          <span class="text-500">since last week</span>
+          <span class="text-500">Mehr auf Anfrage</span>
         </div>
       </div>
-      <div class="col-12 md:col-6 lg:col-3">
+      <div class="col-12 md:col-6 lg:col-4">
         <div class="surface-card shadow-2 p-3 border-round">
           <div class="flex justify-content-between mb-3">
             <div>
-              <span class="block text-500 font-medium mb-3">Customers</span>
-              <div class="text-900 font-medium text-xl">28441</div>
+              <span class="block text-500 font-medium mb-3">GFM Nutzer</span>
+              <div class="text-900 font-medium text-xl">
+                {{ stats.gfmUserCount }}
+              </div>
             </div>
             <div
               class="
@@ -69,16 +76,31 @@
               <i class="pi pi-inbox text-cyan-500 text-xl"></i>
             </div>
           </div>
-          <span class="text-green-500 font-medium">520 </span>
-          <span class="text-500">newly registered</span>
+          <span class="text-green-500 font-medium">
+            {{ stats.gfmUserLastMonth }} neu
+          </span>
+          <span class="text-500"> registeriert</span>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts">
+import { ref } from "@vue/reactivity";
+export default {
+  setup() {
+    const stats = ref("");
+    const get = async function () {
+      let response = await fetch("http://localhost:8080/api/stats");
+      let data = await response.json();
+      stats.value = data;
+    };
+    get();
+
+    return { stats };
+  },
+};
 </script>
 
 <style scoped>
