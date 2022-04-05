@@ -22,7 +22,7 @@
               "
               style="width: 2.5rem; height: 2.5rem"
             >
-              <i class="pi pi-shopping-cart text-blue-500 text-xl"></i>
+              <i class="pi pi-users text-blue-500 text-xl"></i>
             </div>
           </div>
           <span v-if="stats" class="text-green-500 font-medium">
@@ -48,7 +48,7 @@
               "
               style="width: 2.5rem; height: 2.5rem"
             >
-              <i class="pi pi-map-marker text-orange-500 text-xl"></i>
+              <i class="pi pi-desktop text-orange-500 text-xl"></i>
             </div>
           </div>
           <span class="text-500">Mehr auf Anfrage</span>
@@ -73,7 +73,7 @@
               "
               style="width: 2.5rem; height: 2.5rem"
             >
-              <i class="pi pi-inbox text-cyan-500 text-xl"></i>
+              <i class="pi pi-user text-cyan-500 text-xl"></i>
             </div>
           </div>
           <span v-if="stats" class="text-green-500 font-medium">
@@ -90,7 +90,12 @@
 import { ref } from "@vue/reactivity";
 export default {
   setup() {
-    const stats = ref("");
+    const stats = ref({
+      gfmUserCount: 0,
+      gfmUserLastMonth: 0,
+      tsUserCount: 0,
+      tsUserLastMonth: 0,
+    });
     const get = async function () {
       let response = await fetch("https://api.gamingformiau.de/api/stats");
       let data = await response.json();

@@ -18,11 +18,13 @@ export default {
         to: { name: "home" },
       },
       {
-        label: "Games",
+        label: "Spiele",
+        icon: "pi pi-fw pi-desktop",
         to: { name: "games" },
       },
       {
         label: "Social",
+        icon: "pi pi-fw pi-globe",
         to: { name: "social" },
       },
     ]);
