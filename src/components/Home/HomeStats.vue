@@ -1,5 +1,5 @@
 <template>
-  <div v-if="stats" class="surface-ground px-4 py-5 md:px-6 lg:px-8">
+  <div class="surface-ground px-4 py-5 md:px-6 lg:px-8">
     <div class="grid">
       <div class="col-12 md:col-6 lg:col-4">
         <div class="surface-card shadow-2 p-3 border-round">
@@ -8,7 +8,7 @@
               <span class="block text-500 font-medium mb-3"
                 >TeamSpeak Nutzer</span
               >
-              <div class="text-900 font-medium text-xl">
+              <div v-if="stats" class="text-900 font-medium text-xl">
                 {{ stats.tsUserCount }}
               </div>
             </div>
@@ -25,7 +25,7 @@
               <i class="pi pi-shopping-cart text-blue-500 text-xl"></i>
             </div>
           </div>
-          <span class="text-green-500 font-medium">
+          <span v-if="stats" class="text-green-500 font-medium">
             {{ stats.tsUserLastMonth }} neu
           </span>
           <span class="text-500">im letzten Monat</span>
@@ -59,7 +59,7 @@
           <div class="flex justify-content-between mb-3">
             <div>
               <span class="block text-500 font-medium mb-3">GFM Nutzer</span>
-              <div class="text-900 font-medium text-xl">
+              <div v-if="stats" class="text-900 font-medium text-xl">
                 {{ stats.gfmUserCount }}
               </div>
             </div>
@@ -76,7 +76,7 @@
               <i class="pi pi-inbox text-cyan-500 text-xl"></i>
             </div>
           </div>
-          <span class="text-green-500 font-medium">
+          <span v-if="stats" class="text-green-500 font-medium">
             {{ stats.gfmUserLastMonth }} neu
           </span>
           <span class="text-500"> registeriert</span>
@@ -92,7 +92,7 @@ export default {
   setup() {
     const stats = ref("");
     const get = async function () {
-      let response = await fetch("https://gamingformiau.de/api/stats");
+      let response = await fetch("https://api.gamingformiau.de/api/stats");
       let data = await response.json();
       stats.value = data;
     };
