@@ -26,6 +26,7 @@
           icon="pi pi-copy"
           :label="'IP: ' + ip"
           class="p-button copy-ip"
+          @click.prevent="doCopy"
         />
       </template>
     </card>
@@ -34,9 +35,23 @@
 
 <script>
 import Card from "primevue/card";
+import { copyText } from "vue3-clipboard";
 export default {
   components: { Card },
   props: ["name", "description", "ip", "status", "imgUrl"],
+  setup(props) {
+    const doCopy = () => {
+      copyText(props.ip, undefined, (error) => {
+        if (error) {
+          console.log(error);
+        } else {
+          alert("Copied");
+        }
+      });
+    };
+
+    return { doCopy };
+  },
 };
 </script>
 
