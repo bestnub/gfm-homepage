@@ -3,7 +3,7 @@
     <card style="width: 100%">
       <template #header>
         <div style="display: flex; justify-content: center">
-          <img :src="imgUrl" style="" />
+          <img class="gameImg" :src="imgUrl" style="" />
         </div>
       </template>
       <template #title> {{ name }} </template>
@@ -45,7 +45,7 @@ p {
   line-height: 1.5;
   margin: 0;
 }
-img {
+.gameImg {
   padding: 1rem 1rem 0;
   display: block;
   max-width: 100%;
