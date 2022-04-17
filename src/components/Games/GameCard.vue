@@ -33,13 +33,13 @@
 
 <script>
 import Card from "primevue/card";
-import { copyText } from "vue3-clipboard";
-import { ref } from "@vue/reactivity";
 import Toast from "primevue/toast";
-import { useToast } from "primevue/usetoast";
-import { defineComponent } from "@vue/runtime-core";
 import Button from "primevue/button";
+import { ref } from "@vue/reactivity";
+import { copyText } from "vue3-clipboard";
+import { useToast } from "primevue/usetoast";
 import { ToastSeverity } from "primevue/api";
+import { defineComponent } from "@vue/runtime-core";
 export default defineComponent({
   components: { Card, Toast, Button },
   props: ["name", "description", "ip", "friendlyName", "imgUrl", "content"],
