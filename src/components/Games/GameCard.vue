@@ -8,8 +8,8 @@
       </template>
       <template #title> {{ name }} </template>
       <template #subtitle>
-        <span :class="status == 'online' ? 'online' : 'offline'">
-          {{ status == "online" ? "Online" : "Offline" }}
+        <span :class="uptime.online ? 'online' : 'offline'">
+          {{ uptime.online ? "Online" : "Offline" }}
         </span>
       </template>
       <template #content>
@@ -36,10 +36,27 @@
 <script>
 import Card from "primevue/card";
 import { copyText } from "vue3-clipboard";
+import { ref } from "@vue/reactivity";
 export default {
   components: { Card },
-  props: ["name", "description", "ip", "status", "imgUrl"],
+  props: ["name", "description", "ip", "friendlyName", "imgUrl"],
   setup(props) {
+    const uptime = ref({
+      friendlyName: "",
+      online: false,
+    });
+    const get = async function () {
+      let response = await fetch(
+        "https://api.gamingformiau.de/api/uptime/" + props.friendlyName
+      );
+      if (response.status.toString().startsWith("2")) {
+        let data = await response.json();
+        console.log(data);
+        uptime.value = data;
+      }
+    };
+    get();
+
     const doCopy = () => {
       copyText(props.ip, undefined, (error) => {
         if (error) {
@@ -50,7 +67,7 @@ export default {
       });
     };
 
-    return { doCopy };
+    return { doCopy, uptime };
   },
 };
 </script>
