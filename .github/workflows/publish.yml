@@ -1,4 +1,4 @@
-# This workflow will build the webpacge and then publish it
+# This workflow will build the webpage and then publish it
 
 name: Publish gfm-webpage
 
