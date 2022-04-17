@@ -1,8 +1,8 @@
 <template>
-  <div style="padding: 0.5em">
-    <card style="width: 100%">
+  <div class="game-card" style="padding: 0.5em">
+    <card class="flex flex-column" style="width: 100%; height: 100%">
       <template #header>
-        <div style="display: flex; justify-content: center">
+        <div class="flex justify-content-center">
           <img class="gameImg" :src="imgUrl" style="" />
         </div>
       </template>
@@ -14,10 +14,7 @@
       </template>
       <template #content>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
+          {{ content }}
         </p>
       </template>
       <template #footer>
@@ -25,7 +22,7 @@
           v-if="ip"
           icon="pi pi-copy"
           :label="'IP: ' + ip"
-          class="p-button copy-ip"
+          class="p-button copy-ip bottom-0"
           @click.prevent="doCopy"
         />
       </template>
@@ -45,7 +42,7 @@ import Button from "primevue/button";
 import { ToastSeverity } from "primevue/api";
 export default defineComponent({
   components: { Card, Toast, Button },
-  props: ["name", "description", "ip", "friendlyName", "imgUrl"],
+  props: ["name", "description", "ip", "friendlyName", "imgUrl", "content"],
   setup(props) {
     const toast = useToast();
     const uptime = ref({
@@ -102,5 +99,13 @@ p {
 }
 .offline {
   color: red;
+}
+.game-card::v-deep .p-card-body {
+  flex-grow: 1;
+  display: flex !important;
+  flex-direction: column;
+}
+.game-card::v-deep .p-card-content {
+  flex-grow: 1;
 }
 </style>
