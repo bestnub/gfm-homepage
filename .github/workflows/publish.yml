@@ -20,6 +20,14 @@ jobs:
       contents: read
       packages: write
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+      - name: Setup node
+        uses: actions/setup-node@master
+      - name: Install dependency
+        run: npm install
+      - name: Build
+        run: npm run build
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
