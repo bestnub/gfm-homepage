@@ -11,8 +11,8 @@
     />
     <GameCard
       class="col-12 md:col-6 lg:col-6"
-      name="Vallheim"
-      friendlyName="vallheim"
+      name="Valheim"
+      friendlyName="valheim"
       ip="vh.gamingformiau.de"
       imgUrl="https://www.dsogaming.com/wp-content/uploads/2021/02/Valheim-Header.jpg"
       content="Erbaut ein Dorf, beiegt Bosse und entdeckt die weite Welt von Vallheim"
