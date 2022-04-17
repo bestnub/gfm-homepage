@@ -42,6 +42,7 @@ import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
 import { defineComponent } from "@vue/runtime-core";
 import Button from "primevue/button";
+import { ToastSeverity } from "primevue/api";
 export default defineComponent({
   components: { Card, Toast, Button },
   props: ["name", "description", "ip", "friendlyName", "imgUrl"],
@@ -57,7 +58,6 @@ export default defineComponent({
       );
       if (response.status.toString().startsWith("2")) {
         let data = await response.json();
-        console.log(data);
         uptime.value = data;
       }
     };
@@ -66,10 +66,11 @@ export default defineComponent({
     const doCopy = () => {
       copyText(props.ip, undefined, (error) => {
         if (error) {
+          // eslint-disable-next-line
           console.log(error);
         } else {
           toast.add({
-            severity: "success",
+            severity: ToastSeverity.SUCCESS,
             summary: "IP Adresse wurde kopiert",
             detail: props.ip,
             life: 3000,
