@@ -93,7 +93,7 @@ p {
   padding: 1rem 1rem 0;
   display: block;
   max-width: 100%;
-  max-height: 15rem;
+  max-height: 240px;
   width: auto;
   height: auto;
 }
