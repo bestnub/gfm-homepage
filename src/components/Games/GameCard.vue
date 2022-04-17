@@ -30,6 +30,7 @@
         />
       </template>
     </card>
+    <Toast position="top-center" />
   </div>
 </template>
 
@@ -37,10 +38,15 @@
 import Card from "primevue/card";
 import { copyText } from "vue3-clipboard";
 import { ref } from "@vue/reactivity";
-export default {
-  components: { Card },
+import Toast from "primevue/toast";
+import { useToast } from "primevue/usetoast";
+import { defineComponent } from "@vue/runtime-core";
+import Button from "primevue/button";
+export default defineComponent({
+  components: { Card, Toast, Button },
   props: ["name", "description", "ip", "friendlyName", "imgUrl"],
   setup(props) {
+    const toast = useToast();
     const uptime = ref({
       friendlyName: "",
       online: false,
@@ -62,14 +68,19 @@ export default {
         if (error) {
           console.log(error);
         } else {
-          alert("Copied");
+          toast.add({
+            severity: "success",
+            summary: "IP Adresse wurde kopiert",
+            detail: props.ip,
+            life: 3000,
+          });
         }
       });
     };
 
     return { doCopy, uptime };
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

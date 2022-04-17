@@ -27,7 +27,7 @@
       name="ARMA 3"
       friendlyName="arma3"
       ip="arma.gamingformiau.de"
-      imgUrl="https://cdn.cloudflare.steamstatic.com/steam/apps/107410/header.jpg"
+      imgUrl="https://cdn.cloudflare.steamstatic.com/steam/apps/107410/capsule_616x353.jpg?t=1643208914"
     />
   </div>
 </template>

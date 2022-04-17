@@ -2,12 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import ToastService from 'primevue/toastservice';
 
 import PrimeVue from 'primevue/config';
-import InputText from 'primevue/inputtext';
-import Button from 'primevue/button';
-import Checkbox from 'primevue/checkbox';
-import Menubar from 'primevue/menubar';
 import TabMenu from 'primevue/tabmenu';
 
 import "primeflex/primeflex.css";
@@ -24,9 +21,10 @@ createApp(App)
     .use(store)
     .use(router)
     .use(PrimeVue)
-    .component('InputText', InputText)
-    .component('Button', Button)
-    .component('Checkbox', Checkbox)
-    .component('Menubar', Menubar)
+    .use(ToastService)
+    // .component('InputText', InputText)
+    // .component('Button', Button)
+    // .component('Checkbox', Checkbox)
+    // .component('Menubar', Menubar)
     .component('TabMenu', TabMenu)
     .mount('#app')
