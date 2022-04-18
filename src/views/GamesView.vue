@@ -22,6 +22,7 @@
       name="Factorio"
       friendlyName="factorio"
       ip="fc.gamingformiau.de"
+      joinUrl="steam://connect/fc.gamingformiau.de:34197"
       imgUrl="https://i.ytimg.com/vi/BqaAjgpsoW8/maxresdefault.jpg"
       content="THE FACTORY MUST GROW!"
     />

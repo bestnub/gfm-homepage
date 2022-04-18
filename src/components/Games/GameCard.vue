@@ -22,8 +22,15 @@
           v-if="ip"
           icon="pi pi-copy"
           :label="'IP: ' + ip"
-          class="p-button copy-ip bottom-0"
+          class="p-button bottom-0"
           @click.prevent="doCopy"
+        />
+        <Button
+          v-if="joinUrl"
+          icon="pi pi-server"
+          :label="'Join now'"
+          class="p-button bottom-0"
+          @click.prevent="doJoin"
         />
       </template>
     </card>
@@ -40,7 +47,15 @@ import { ToastSeverity } from "primevue/api";
 import { defineComponent } from "@vue/runtime-core";
 export default defineComponent({
   components: { Card, Button },
-  props: ["name", "description", "ip", "friendlyName", "imgUrl", "content"],
+  props: [
+    "name",
+    "description",
+    "ip",
+    "joinUrl",
+    "friendlyName",
+    "imgUrl",
+    "content",
+  ],
   setup(props) {
     const toast = useToast();
     const uptime = ref({
@@ -74,7 +89,11 @@ export default defineComponent({
       });
     };
 
-    return { doCopy, uptime };
+    const doJoin = () => {
+      window.open(props.joinUrl);
+    };
+
+    return { doCopy, doJoin, uptime };
   },
 });
 </script>
@@ -105,5 +124,11 @@ p {
 }
 .game-card:deep(.p-card-content) {
   flex-grow: 1;
+}
+.game-card:deep(.p-card-footer) {
+  padding: 0.5rem 0 0 0;
+}
+.game-card:deep(.p-button) {
+  margin: 0.5rem 0.25rem 0;
 }
 </style>
