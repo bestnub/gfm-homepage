@@ -98,12 +98,12 @@ p {
 .offline {
   color: red;
 }
-.game-card::deep .p-card-body {
+.game-card:deep(.p-card-body) {
   flex-grow: 1;
   display: flex !important;
   flex-direction: column;
 }
-.game-card::deep .p-card-content {
+.game-card:deep(.p-card-content) {
   flex-grow: 1;
 }
 </style>
