@@ -6,7 +6,7 @@
       name="Minecraft Vanilla"
       friendlyName="mc-vanilla"
       ip="mc.gamingformiau.de"
-      imgUrl="https://www.minecraft.net/content/dam/games/minecraft/marketplace/updates-catspandas_latest.jpg"
+      imgName="minecraft-gamecard.jpg"
       content="Ein einfacher Vanilla Minecraftserver. Der Server hat eine Whitelist. Bei Interesse, melde dich auf dem TeamSpeak"
     />
     <GameCard
@@ -14,7 +14,7 @@
       name="Valheim"
       friendlyName="valheim"
       ip="vh.gamingformiau.de"
-      imgUrl="https://www.dsogaming.com/wp-content/uploads/2021/02/Valheim-Header.jpg"
+      imgName="valheim-gamecard.jpg"
       content="Erbaut ein Dorf, beiegt Bosse und entdeckt die weite Welt von Vallheim"
     />
     <GameCard
@@ -23,7 +23,7 @@
       friendlyName="factorio"
       ip="fc.gamingformiau.de"
       joinUrl="steam://connect/fc.gamingformiau.de:34197"
-      imgUrl="https://i.ytimg.com/vi/BqaAjgpsoW8/maxresdefault.jpg"
+      imgName="factorio-gamecard.jpg"
       content="THE FACTORY MUST GROW!"
     />
     <GameCard
@@ -31,7 +31,7 @@
       name="ARMA 3"
       friendlyName="arma3"
       ip="arma.gamingformiau.de"
-      imgUrl="https://cdn.cloudflare.steamstatic.com/steam/apps/107410/capsule_616x353.jpg?t=1643208914"
+      imgName="arma3-gamecard.jpg"
       content="Spiele eine von vielen Missionen mit deinen Freunden"
     />
   </div>

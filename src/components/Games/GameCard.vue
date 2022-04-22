@@ -3,7 +3,13 @@
     <card class="flex flex-column" style="width: 100%; height: 100%">
       <template #header>
         <div class="flex justify-content-center">
-          <img class="gameImg" :src="imgUrl" style="" />
+          <img
+            v-if="imgName || imgUrl"
+            class="gameImg"
+            :src="
+              imgName ? require('@/assets/gamecard/' + imgName + '') : imgUrl
+            "
+          />
         </div>
       </template>
       <template #title> {{ name }} </template>
@@ -54,6 +60,7 @@ export default defineComponent({
     "joinUrl",
     "friendlyName",
     "imgUrl",
+    "imgName",
     "content",
   ],
   setup(props) {
