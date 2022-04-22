@@ -8,13 +8,26 @@
         <div class="text-900 font-bold text-5xl mb-3">
           Join unserm TeamSpeak
         </div>
-        <div class="text-700 text-2xl mb-5">
+        <div class="text-700 text-2xl mb-4">
           Unser TeamSpeak hat viele aktive Nutzer
         </div>
+        <Button
+          @click="openTeamSpeakDownload"
+          label="Download"
+          class="
+            social-button
+            font-bold
+            px-5
+            py-3
+            p-button-raised p-button-rounded
+            white-space-nowrap
+          "
+        />
         <Button
           @click="openTeamSpeak"
           label="Join Now"
           class="
+            social-button
             font-bold
             px-5
             py-3
@@ -36,7 +49,10 @@ export default defineComponent({
     const openTeamSpeak = () => {
       window.window.location.href = "ts3server://ts.gamingformiau.de?port=9987";
     };
-    return { openTeamSpeak };
+    const openTeamSpeakDownload = () => {
+      window.open("https://teamspeak.com/de/downloads/");
+    };
+    return { openTeamSpeak, openTeamSpeakDownload };
   },
 });
 </script>
@@ -46,5 +62,9 @@ export default defineComponent({
   background: url("../../assets/teamspeak.svg");
   height: 1rem;
   width: 1rem;
+}
+
+.social-button {
+  margin: 1rem 0.5rem 0rem;
 }
 </style>
