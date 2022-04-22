@@ -34,7 +34,7 @@ export default defineComponent({
   components: { Button },
   setup() {
     const openTeamSpeak = () => {
-      window.open("ts3server://ts.gamingformiau.de?port=9987");
+      window.window.location.href = "ts3server://ts.gamingformiau.de?port=9987";
     };
     return { openTeamSpeak };
   },

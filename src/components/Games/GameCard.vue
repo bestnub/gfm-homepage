@@ -97,7 +97,7 @@ export default defineComponent({
     };
 
     const doJoin = () => {
-      window.open(props.joinUrl);
+      window.window.location.href = props.joinUrl;
     };
 
     return { doCopy, doJoin, uptime };
