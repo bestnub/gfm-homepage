@@ -20,7 +20,7 @@ import 'primeicons/primeicons.css';
 createApp(App)
     .use(store)
     .use(router)
-    .use(PrimeVue)
+    .use(PrimeVue, { ripple: true })
     .use(ToastService)
     .component('TabMenu', TabMenu)
     .mount('#app')
