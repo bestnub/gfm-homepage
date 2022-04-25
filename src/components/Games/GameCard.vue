@@ -138,4 +138,7 @@ p {
 .game-card:deep(.p-button) {
   margin: 0.5rem 0.25rem 0;
 }
+.game-card:deep(.p-button:focus) {
+  box-shadow: none !important;
+}
 </style>
