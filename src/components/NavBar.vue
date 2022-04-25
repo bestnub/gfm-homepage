@@ -38,4 +38,7 @@ export default {
 ::v-deep(.tabmenudemo-content) {
   padding: 2rem 1rem;
 }
+:deep(.p-menuitem-link:focus) {
+  box-shadow: none !important;
+}
 </style>
