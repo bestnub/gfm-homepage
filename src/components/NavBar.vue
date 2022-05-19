@@ -17,11 +17,7 @@
         <router-link :to="item.to" class="p-menuitem-link" role="menuitem">
           <span class="p-menuitem-icon" :class="item.icon"></span>
           <span class="p-menuitem-text">{{ item.label }}</span>
-          <span
-            class="p-ink"
-            style="height: 103px; width: 103px; top: -36.5px; left: 21.5px"
-          ></span
-        ></router-link>
+        </router-link>
       </template>
 
       <!-- Anmelde Knopf -->
