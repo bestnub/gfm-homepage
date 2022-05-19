@@ -3,7 +3,7 @@
   <div class="grid grid-nogutter">
     <GameCard
       class="col-12 md:col-6 lg:col-6"
-      name="Minecraft Vanilla"
+      name="Minecraft"
       friendlyName="mc-vanilla"
       ip="mc.gamingformiau.de"
       imgName="minecraft-gamecard.jpg"

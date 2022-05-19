@@ -1,6 +1,6 @@
 <template>
-  <home-landing />
-  <home-stats />
+  <HomeLanding />
+  <HomeStats />
 </template>
 
 <script lang="ts">

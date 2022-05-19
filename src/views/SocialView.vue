@@ -1,7 +1,8 @@
 <template>
   <page-heading currentSiteName="Social" />
   <div class="social">
-    <team-speak />
+    <TeamSpeak />
+    <Discord />
     <div class="grid grid-nogutter"></div>
   </div>
 </template>
@@ -9,8 +10,9 @@
 <script>
 import PageHeading from "@/components/PageHeading.vue";
 import TeamSpeak from "@/components/Social/TeamSpeak.vue";
+import Discord from "@/components/Social/Discord.vue";
 export default {
-  components: { PageHeading, TeamSpeak },
+  components: { PageHeading, TeamSpeak, Discord },
 };
 </script>
 
