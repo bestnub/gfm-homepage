@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div class="card">
-      <TabMenu :model="items" />
-    </div>
+  <div class="nav-bar px-2">
+    <TabMenu :model="items" />
   </div>
 </template>
 
@@ -35,7 +33,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-::v-deep(.tabmenudemo-content) {
+:deep(.tabmenudemo-content) {
   padding: 2rem 1rem;
 }
 :deep(.p-menuitem-link:focus) {
