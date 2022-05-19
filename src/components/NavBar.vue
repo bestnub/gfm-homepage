@@ -1,13 +1,44 @@
 <template>
-  <div class="nav-bar px-2">
-    <TabMenu :model="items" />
+  <div class="nav-bar">
+    <Menubar :model="items">
+      <!-- Icon -->
+      <template #start>
+        <div class="h-full w-full">
+          <img src="@/assets/gfm_logo2.png" alt="Image" style="height: 40px" />
+        </div>
+      </template>
+
+      <!-- Menue Item -->
+      <template #item="{ item }">
+        <router-link :to="item.to" class="p-menuitem-link" role="menuitem">
+          <span class="p-menuitem-icon" :class="item.icon"></span>
+          <span class="p-menuitem-text">{{ item.label }}</span>
+          <span
+            class="p-ink"
+            style="height: 103px; width: 103px; top: -36.5px; left: 21.5px"
+          ></span
+        ></router-link>
+      </template>
+
+      <!-- Anmelde Knopf -->
+      <template #end>
+        <Button
+          @click="$router.push({ name: 'home' })"
+          label="Anmelden"
+          disabled="disabled"
+        />
+      </template>
+    </Menubar>
   </div>
 </template>
 
-<script>
-import { ref } from "vue";
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import Menubar from "primevue/menubar";
+import Button from "primevue/button";
 
-export default {
+export default defineComponent({
+  components: { Menubar, Button },
   setup() {
     const items = ref([
       {
@@ -29,7 +60,7 @@ export default {
 
     return { items };
   },
-};
+});
 </script>
 
 <style scoped lang="scss">
@@ -38,5 +69,14 @@ export default {
 }
 :deep(.p-menuitem-link:focus) {
   box-shadow: none !important;
+}
+
+.router-link-active {
+  .p-menuitem-text,
+  .p-menuitem-icon {
+    color: var(--primary-color) !important;
+  }
+}
+.router-link-active-exact {
 }
 </style>
