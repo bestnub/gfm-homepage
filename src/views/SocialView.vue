@@ -1,5 +1,5 @@
 <template>
-  <page-heading currentSiteName="Social" />
+  <PageHeading currentSiteName="Social" />
   <div class="social">
     <TeamSpeak />
     <Discord />

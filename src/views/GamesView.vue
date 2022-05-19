@@ -1,5 +1,5 @@
 <template>
-  <page-heading currentSiteName="Spiele" />
+  <PageHeading currentSiteName="Spiele" />
   <div class="grid grid-nogutter">
     <GameCard
       class="col-12 md:col-6 lg:col-6"
