@@ -4,7 +4,11 @@
       <!-- Icon -->
       <template #start>
         <div class="h-full w-full">
-          <img src="@/assets/gfm_logo2.png" alt="Image" style="height: 40px" />
+          <img
+            src="@/assets/gfm_logo2.png"
+            alt="Image"
+            style="max-height: 40px"
+          />
         </div>
       </template>
 
