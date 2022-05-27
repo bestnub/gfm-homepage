@@ -87,19 +87,20 @@
 </template>
 
 <script lang="ts">
-import { ref } from "@vue/reactivity";
+import { useStore } from "vuex";
+import { computed } from "@vue/runtime-core";
 export default {
   setup() {
-    const stats = ref({
-      gfmUserCount: 0,
-      gfmUserLastMonth: 0,
-      tsUserCount: 0,
-      tsUserLastMonth: 0,
+    const store = useStore();
+
+    const stats = computed(() => {
+      return store.state.homePageStats;
     });
+
     const get = async function () {
       let response = await fetch("https://api.gamingformiau.de/api/stats");
       let data = await response.json();
-      stats.value = data;
+      store.commit("setHomePageStats", data);
     };
     get();
 
