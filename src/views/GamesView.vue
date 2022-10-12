@@ -38,7 +38,7 @@
   <Toast position="top-center" />
 </template>
 
-<script>
+<script lang="ts">
 import Toast from "primevue/toast";
 import GameCard from "@/components/Games/GameCard.vue";
 import PageHeading from "@/components/PageHeading.vue";

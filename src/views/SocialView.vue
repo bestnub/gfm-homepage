@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import PageHeading from "@/components/PageHeading.vue";
 import TeamSpeak from "@/components/Social/TeamSpeak.vue";
 import Discord from "@/components/Social/Discord.vue";

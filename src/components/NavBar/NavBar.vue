@@ -25,7 +25,7 @@
         <Button
           @click="$router.push({ name: 'home' })"
           label="Anmelden"
-          disabled="disabled"
+          disabled=true
         />
       </template>
     </Menubar>
